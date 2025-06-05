@@ -3,16 +3,18 @@ import os
 import requests
 import chromadb
 from dotenv import load_dotenv
+import time
 
 load_dotenv()
 
 # Konfiguration
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 MIXTRAL_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
-CHROMA_HOST = "localhost"
-CHROMA_PORT = 8000
+CHROMA_HOST = os.getenv("CHROMA_HOST", "chroma")
+CHROMA_PORT = int(os.getenv("CHROMA_PORT", "8000"))
 EMBEDDING_MODEL = "nomic-embed-text"
-EMBEDDING_URL = "http://localhost:11434/api/embeddings"
+EMBEDDING_URL = "http://ollama:11434/api/embeddings"
+
 
 assert TOGETHER_API_KEY, "Bitte TOGETHER_API_KEY als Umgebungsvariable setzen."
 
@@ -36,19 +38,31 @@ def generate_antwort(frage):
     frage_embedding = embed_response.json()["embedding"]
 
     # 2. Chroma Retrieval
-    client = chromadb.HttpClient(host=CHROMA_HOST, port=CHROMA_PORT)
+    for attempt in range(10):
+        try:
+            client = chromadb.HttpClient(host=CHROMA_HOST, port=CHROMA_PORT)
+            client.heartbeat()
+            break
+        except Exception as e:
+            print(f"Attempt {attempt+1}/10: Could not reach Chroma - {e}")
+            time.sleep(2)
+    else:
+        return {"error": "Chroma konnte nicht erreicht werden."}
+
+
     collection = client.get_or_create_collection("gesetzestexte")
     result = collection.query(
         query_embeddings=[frage_embedding],
         n_results=5,
         include=["documents", "metadatas", "distances"]
     )
+    
 
     top_docs = result["documents"][0]
     kontext = "\n\n".join(top_docs)
 
     # 3. Prompt bauen
-    prompt = f"""Beantworte die folgende Frage ausschließlich basierend auf dem gegebenen Kontext.
+    prompt = f"""Beantworte die folgende Frage ausschliesslich basierend auf dem gegebenen Kontext.
 
 Frage: {frage}
 
@@ -102,6 +116,10 @@ frage = st.chat_input("Stelle deine Frage...")
 if frage:
     with st.spinner("Denke nach..."):
         result = generate_antwort(frage)
+        
+
+
+
 
         if "error" in result:
             st.error(result["error"])

@@ -2,7 +2,7 @@ import json
 import chromadb
 
 # === Mit dem Chroma-Server verbinden ===
-client = chromadb.HttpClient(host="localhost", port=8000)
+client = chromadb.HttpClient(host="chroma", port=8000)
 collection = client.get_or_create_collection(name="gesetzestexte")
 
 # === Embeddings laden ===
