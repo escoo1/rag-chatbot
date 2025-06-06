@@ -76,6 +76,6 @@ You only need to import embeddings after rebuilding (--build) or clearing the Ch
  
 Do not push data/chroma/ to Git – it’s excluded automatically.
  
-If you accidentally stop the app:
+To run the docker again run:
  
     docker-compose up
