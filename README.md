@@ -1,6 +1,6 @@
 # RAG Chatbot – Swiss Law Assistant
 
-This document describes how the RAG application must be set up correctly in this repository and what preparations must be made.
+This document describes how the RAG application in this repository must be set up correctly and what preparations must be made.
 
 ## Prerequisites
 * In order to run the application with Docker, you need to install Docker Desktop on Windows systems. 
