@@ -12,8 +12,8 @@ If you have a MacOS client or a Linux based system, you have to isntall Docker w
 ## Setup Guide: RAG Chatbot – Swiss Law Assistant
 ### 1. Clone the Repository
  
-* git clone <REPOSITORY_URL>
-* cd rag-chatbot
+git clone <REPOSITORY_URL>
+cd rag-chatbot
  
 ### 2. Add API Key
  
