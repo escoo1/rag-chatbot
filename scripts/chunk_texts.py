@@ -33,6 +33,6 @@ for filename in os.listdir(input_folder):
             with open(chunk_path, "w", encoding="utf-8") as cf:
                 cf.write(chunk)
 
-        print(f"✅ {filename} → {len(chunks)} Chunks")
+        print(f"{filename} → {len(chunks)} Chunks")
 
-print("✅ Chunking abgeschlossen.")
+print("Chunking abgeschlossen.")

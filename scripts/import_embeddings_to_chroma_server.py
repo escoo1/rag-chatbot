@@ -23,4 +23,4 @@ for entry in data:
     )
     print(f"✅ Importiert: {entry['filename']}")
 
-print(f"\n🎉 Import abgeschlossen: {len(data)} Embeddings in Chroma (Server-Modus)")
+print(f"\n Import abgeschlossen: {len(data)} Embeddings in Chroma (Server-Modus)")

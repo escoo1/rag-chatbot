@@ -19,7 +19,7 @@ def get_embedding(text):
     if response.status_code == 200:
         return response.json()["embedding"]
     else:
-        print("❌ Fehler bei Embedding:", response.text)
+        print("Fehler bei Embedding:", response.text)
         return None
 
 # === Alle Chunks verarbeiten ===
@@ -46,10 +46,10 @@ for filename in sorted(os.listdir(CHUNK_DIR)):
         "embedding": embedding
     })
 
-    print(f"✅ Gespeichert: {filename}")
+    print(f"Gespeichert: {filename}")
 
 # === JSON-Datei schreiben ===
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(all_embeddings, f, ensure_ascii=False, indent=2)
 
-print(f"\n🎉 Alle Embeddings gespeichert in {OUTPUT_FILE}")
+print(f"\n Alle Embeddings gespeichert in {OUTPUT_FILE}")

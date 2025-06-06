@@ -31,7 +31,7 @@ if embed_response.status_code != 200:
 frage_embedding = embed_response.json()["embedding"]
 
 # === ChromaDB: relevante Chunks abrufen ===
-print("📚 Suche relevante Chunks in Chroma...")
+print("Suche relevante Chunks in Chroma...")
 client = chromadb.HttpClient(host="localhost", port=8000)
 collection = client.get_or_create_collection("gesetzestexte")
 result = collection.query(

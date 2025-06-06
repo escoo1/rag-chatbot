@@ -12,7 +12,7 @@ os.makedirs(output_folder, exist_ok=True)
 for filename in os.listdir(input_folder):
     if filename.endswith(".pdf"):
         pdf_path = os.path.join(input_folder, filename)
-        print(f"📄 Bearbeite: {filename}")
+        print(f"Bearbeite: {filename}")
 
         # PDF öffnen und Text extrahieren
         doc = fitz.open(pdf_path)
@@ -27,4 +27,4 @@ for filename in os.listdir(input_folder):
         with open(txt_path, "w", encoding="utf-8") as f:
             f.write(full_text)
 
-print("✅ Alle Texte wurden extrahiert und gespeichert.")
+print("Alle Texte wurden extrahiert und gespeichert.")
