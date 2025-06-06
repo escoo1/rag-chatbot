@@ -1,4 +1,4 @@
-# rag-chatbot
+# Instructions for setting up the RAG-Bot
 
 This document describes how the RAG application must be set up correctly in this repository and what preparations must be made.
 
