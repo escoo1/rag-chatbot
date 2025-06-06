@@ -1,4 +1,4 @@
-RAG Chatbot – Swiss Law Assistant
+# RAG Chatbot – Swiss Law Assistant
 
 This document describes how the RAG application must be set up correctly in this repository and what preparations must be made.
 
