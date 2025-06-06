@@ -3,11 +3,14 @@
 This document describes how the RAG application must be set up correctly in this repository and what preparations must be made.
 
 ## Prerequisites
-
+In order to run the application with Docker, you need to install Docker Desktop on Windows systems. 
+If you have a MacOS client or Linux based system, you have to isntall Docker with the respective setups.
+Please note that in order for Docker to run correctly on your system you need to activate CPU virtualization (WSL, Hyper-V etc.). 
+It is possible that you need to activate virtualization in your BIOS. 
 
 
 ## Setup Guide: RAG Chatbot – Swiss Law Assistant
-1. Clone the Repository
+###1. Clone the Repository
  
 git clone <REPOSITORY_URL>
 cd rag-chatbot
@@ -21,6 +24,8 @@ mv .env.apiKey .env
 Then edit the .env file and insert your API key:
  
 TOGETHER_API_KEY=your_actual_api_key_here
+
+The API Key is found the report provided on Moodle. 
  
 3. Build and Start the App
  
