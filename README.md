@@ -32,6 +32,7 @@ TOGETHER_API_KEY=your_actual_api_key_here
  
 ### 3. Build and Start the App
  
+** Important:** Open first Docker Desktop App and wait until it shows "Docker is running"
 Use Docker Compose to build and launch all services:
  
 docker-compose up --build
@@ -48,9 +49,9 @@ This sets up:
  
 Once containers are running (see that the app is live on http://localhost:8501), open a new terminal tab and run:
  
-docker exec -it rag_chatbot_app python scripts/import_embeddings_to_chroma_server.py
+* docker exec -it rag_chatbot_app python scripts/import_embeddings_to_chroma_server.py
 And then:
-docker exec -it ollama ollama pull nomic-embed-text
+* docker exec -it ollama ollama pull nomic-embed-text
  
 You should see logs like:
  
