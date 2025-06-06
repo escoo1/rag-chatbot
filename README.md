@@ -12,8 +12,8 @@ If you have a MacOS client or a Linux based system, you have to isntall Docker w
 ## Setup Guide: RAG Chatbot – Swiss Law Assistant
 ### 1. Clone the Repository
  
-git clone <REPOSITORY_URL>
-cd rag-chatbot
+* git clone <REPOSITORY_URL>
+* cd rag-chatbot
  
 ### 2. Add API Key
  
@@ -25,7 +25,7 @@ Then edit the .env file and insert your API key:
  
 TOGETHER_API_KEY=your_actual_api_key_here
 
-The API Key is found the report provided on Moodle. 
+**The API Key is found the report provided on Moodle.**
  
 ### 3. Build and Start the App
  
