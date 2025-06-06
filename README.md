@@ -4,9 +4,9 @@ This document describes how the RAG application must be set up correctly in this
 
 ## Prerequisites
 * In order to run the application with Docker, you need to install Docker Desktop on Windows systems. 
-If you have a MacOS client or Linux based system, you have to isntall Docker with the respective setups.
-* Please note that in order for Docker to run correctly on your system you need to activate CPU virtualization (WSL, Hyper-V etc.). 
-* It is possible that you need to activate virtualization in your BIOS. 
+If you have a MacOS client or a Linux based system, you have to isntall Docker with the respective setups/installers.
+* Please note that in order for Docker to run correctly on your system you need to activate a virtualization technology (WSL, Hyper-V etc.). 
+* It is possible that you need to activate CPU virtualization in your BIOS!
 
 
 ## Setup Guide: RAG Chatbot – Swiss Law Assistant
@@ -35,11 +35,11 @@ docker-compose up --build
  
 This sets up:
  
-    🧠 ollama (local embedding model)
+    * ollama (local embedding model)
  
-    📚 chroma (vector DB)
+    * chroma (vector DB)
  
-    🌐 Streamlit UI
+    * Streamlit UI
  
 ### 4. Import Embeddings
  
@@ -53,7 +53,7 @@ You should see logs like:
  
 ✅ Importiert: ZGB.txt
 ✅ Importiert: OR.txt
-🎉 Import abgeschlossen: 2800 Embeddings in Chroma (Server-Modus)
+Import abgeschlossen: 2800 Embeddings in Chroma (Server-Modus)
  
 ###5. Use the App
  
