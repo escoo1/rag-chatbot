@@ -57,11 +57,13 @@ And then:
  
 You should see logs like:
  
-✅ Importiert: ZGB.txt
+"✅ Importiert: ZGB.txt
 
 ✅ Importiert: OR.txt
 
-Import abgeschlossen: 2800 Embeddings in Chroma (Server-Modus)
+Import abgeschlossen: 2800 Embeddings in Chroma (Server-Modus)"
+
+Those steps are importanant, otherwise the bot will not function correctly!
  
 ### 5. Use the App
  
