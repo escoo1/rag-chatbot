@@ -1,4 +1,4 @@
-# Instructions for setting up the RAG-Bot
+RAG Chatbot – Swiss Law Assistant
 
 This document describes how the RAG application must be set up correctly in this repository and what preparations must be made.
 
@@ -9,7 +9,7 @@ If you have a MacOS client or a Linux based system, you have to isntall Docker w
 * It is possible that you need to activate CPU virtualization in your BIOS!
 
 
-## Setup Guide: RAG Chatbot – Swiss Law Assistant
+## Setup Guide: RAG Chatbot
 ### 1. Clone the Repository
  
 git clone <REPOSITORY_URL>
