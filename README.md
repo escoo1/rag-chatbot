@@ -32,7 +32,7 @@ TOGETHER_API_KEY=your_actual_api_key_here
  
 ### 3. Build and Start the App
  
-** Important:** Open first Docker Desktop App and wait until it shows "Docker is running"
+**Important:** Open first Docker Desktop App and wait until it shows "Docker is running"
 Use Docker Compose to build and launch all services:
  
 docker-compose up --build
